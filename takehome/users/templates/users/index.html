@@ -1,0 +1,21 @@
+<h1>Team members</h1>
+
+{% if user_list %}
+<h3>You have {{ user_list.count }} team member{{user_list.count|pluralize}}.</h3>
+
+<ul>
+    {% for user in user_list %}
+    <li>
+        <p><a href="{% url 'users:edit_user' user.id %}"><strong>{{user.first_name}} {{user.last_name}} {% if user.admin %} (admin) {% endif %}</strong></a></p>
+        <p>{{user.phone_number}}</p>
+        <p>{{user.email}}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<h3>There are currently no team members.</h3>
+{% endif %}
+
+<form action="{% url 'users:add_user' %}" method="get">
+    <input type="submit" value="Add a new member"/>
+</form>
