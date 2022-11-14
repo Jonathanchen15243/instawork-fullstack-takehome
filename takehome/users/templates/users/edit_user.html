@@ -3,27 +3,6 @@
 
 <form action="{% url 'users:edit_user' user.id %}" method="post">
     {% csrf_token %}
-    <!-- <h3>Info</h3>
-    <label for="first_name">First name:</label><br>
-    <input type="text" id="first_name" name="first_name" value={{user.first_name}}><br>
-    <label for="last_name">Last name:</label><br>
-    <input type="text" id="last_name" name="last_name" value={{user.last_name}}><br>
-    <label for="email">Email:</label><br>
-    <input type="text" id="email" name="email" value={{user.email}}><br>
-    <label for="phone_number">Phone number:</label><br>
-    <input type="text" id="phone_number" name="phone_number" value={{user.phone_number}}><br>
-    <h3>Role</h3>
-    {% if user.admin %}
-    <input type="radio" id="admin_true" name="admin" value="True" checked="checked">
-    <label for="admin_true">Admin - Can delete members</label><br>
-    <input type="radio" id="admin_false" name="admin" value="False">
-    <label for="admin_false">Regular - Can't delete members</label><br>
-    {% else %}
-    <input type="radio" id="admin_true" name="admin" value="True">
-    <label for="admin_true">Admin - Can delete members</label><br>
-    <input type="radio" id="admin_false" name="admin" value="False" checked="checked">
-    <label for="admin_false">Regular - Can't delete members</label><br>
-    {% endif %} -->
     {{ form }}
     <input type="submit" value="Save">
 </form>
